@@ -69,13 +69,7 @@ extern "C" int Menu_Main(void)
 	OSDynLoad_FindExport(cmpt_handle, 0, "CMPTCheckScreenState", &CMPTCheckScreenState);
 
 	//1 = TV Only, 2 = GamePad Only, 3 = Both
-	CMPTAcctSetScreenType(3); 
-	if(CMPTCheckScreenState() < 0)
-	{
-		CMPTAcctSetScreenType(2);
-		if(CMPTCheckScreenState() < 0)
-			CMPTAcctSetScreenType(1);
-	}
+	CMPTAcctSetScreenType(1);
 
 	int datasize = 0;
 	void *databuf;
